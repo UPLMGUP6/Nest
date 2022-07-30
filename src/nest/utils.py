@@ -58,7 +58,7 @@ def load_yaml(path: str) -> Tuple[dict, str]:
 
     with open(path, 'r') as f:
         raw = ''.join(f.readlines())
-        return yaml.load(raw), raw
+        return yaml.safe_load(raw), raw
 
 
 def indent_text(text: str, indent: int) -> str:
