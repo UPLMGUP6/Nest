@@ -92,7 +92,7 @@ class SettingManager(object):
         # load settings
         settings = yaml.safe_load(DEFAULT_SETTINGS)
         with open(SETTINGS_FILE, 'r') as f:
-            user_settings = yaml.load(f) or dict()
+            user_settings = yaml.safe_load(f) or dict()
             settings.update(user_settings)
 
         # handle defaults
